@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('rukuntetangga', [DataRukunTetanggaController::class, 'index']);
 Route::get('rukuntetangga/{id}', [DataRukunTetanggaController::class, 'show']);
 Route::post('rukuntetangga', [DataRukunTetanggaController::class, 'store']);
-Route::put('rukuntetangga/{id}', [DataRukunTetanggaController::class, 'update']);
+Route::post('rukuntetangga/{id}', [DataRukunTetanggaController::class, 'update']);
 Route::delete('rukuntetangga/{id}', [DataRukunTetanggaController::class, 'delete']);
 
 Route::get('masyarakat', [DataMasyarakatController::class, 'index']);

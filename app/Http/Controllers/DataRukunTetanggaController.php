@@ -27,10 +27,10 @@ class DataRukunTetanggaController extends Controller
     public function store(Request $request)
     {
         $validasi = FacadesValidator::make($request->all(), [
-            'no_ktp_rukun_tetangga' => ['required', 'unique:data_rukun_tetanggas'],
-            'no_rukun_tetangga' => 'required',
-            'nama_rukun_tetangga' => 'required',
-            'notel_rukun_tetangga' => 'required'
+            'no_ktp_rukun_tetangga' => 'required|string|unique:data_rukun_tetanggas',
+            'no_rukun_tetangga' => 'required|numeric',
+            'nama_rukun_tetangga' => 'required|string',
+            'notel_rukun_tetangga' => 'required|string',
         ]);
 
         if (!$validasi->fails()) {
@@ -64,10 +64,10 @@ class DataRukunTetanggaController extends Controller
     public function update(Request $request, $id)
     {
         $validasi = FacadesValidator::make($request->all(), [
-            'no_ktp_rukun_tetangga' => 'required',
-            'no_rukun_tetangga' => 'required',
-            'nama_rukun_tetangga' => 'required',
-            'notel_rukun_tetangga' => 'required'
+            'no_ktp_rukun_tetangga' => 'required|string',
+            'no_rukun_tetangga' => 'required|numeric',
+            'nama_rukun_tetangga' => 'required|string',
+            'notel_rukun_tetangga' => 'required|string',
         ]);
 
         if (!$validasi->fails()) {

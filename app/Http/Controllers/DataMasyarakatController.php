@@ -27,16 +27,16 @@ class DataMasyarakatController extends Controller
     public function store(Request $request)
     {
         $validasi = FacadesValidator::make($request->all(), [
-            'no_kartu_keluarga' => ['required', 'unique:data_masyarakats'],
-            'no_ktp_kepala_keluarga' => 'required',
-            'nama_kepala_keluarga' => 'required',
-            'pekerjaan_kepala_keluarga' => 'required',
-            'penghasilan_kepala_keluarga' => 'required',
-            'jumlah_tanggungan' => 'required',
+            'no_kartu_keluarga' => 'required|string|unique:data_masyarakats',
+            'no_ktp_kepala_keluarga' => 'required|string',
+            'nama_kepala_keluarga' => 'required|string',
+            'pekerjaan_kepala_keluarga' => 'required|string',
+            'penghasilan_kepala_keluarga' => 'required|numeric',
+            'jumlah_tanggungan' => 'required|numeric',
             'foto_kepala_keluarga' => 'required|image|mimes:jpg,png',
-            'notel_kepala_keluarga' => 'required',
-            'status_tempat_tinggal' => 'required',
-            'id_rukun_tetangga' => 'required'
+            'notel_kepala_keluarga' => 'required|string',
+            'status_tempat_tinggal' => 'required|string|in:MILIK_SENDIRI,SEWA',
+            'id_rukun_tetangga' => 'required|numeric'
         ]);
 
         if (!$validasi->fails()) {
@@ -81,16 +81,16 @@ class DataMasyarakatController extends Controller
     public function update(Request $request, $id)
     {
         $validasi = FacadesValidator::make($request->all(), [
-            'no_kartu_keluarga' => 'required',
-            'no_ktp_kepala_keluarga' => 'required',
-            'nama_kepala_keluarga' => 'required',
-            'pekerjaan_kepala_keluarga' => 'required',
-            'penghasilan_kepala_keluarga' => 'required',
-            'jumlah_tanggungan' => 'required',
-            'foto_kepala_keluarga' => 'nullable|image|mimes:jpg,png',
-            'notel_kepala_keluarga' => 'required',
-            'status_tempat_tinggal' => 'required',
-            'id_rukun_tetangga' => 'required'
+            'no_kartu_keluarga' => 'required|string',
+            'no_ktp_kepala_keluarga' => 'required|string',
+            'nama_kepala_keluarga' => 'required|string',
+            'pekerjaan_kepala_keluarga' => 'required|string',
+            'penghasilan_kepala_keluarga' => 'required|numeric',
+            'jumlah_tanggungan' => 'required|numeric',
+            'foto_kepala_keluarga' => 'required|image|mimes:jpg,png',
+            'notel_kepala_keluarga' => 'required|string',
+            'status_tempat_tinggal' => 'required|string|in:MILIK_SENDIRI,SEWA',
+            'id_rukun_tetangga' => 'required|numeric'
         ]);
 
         if (!$validasi->fails()) {
