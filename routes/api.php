@@ -16,20 +16,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('rukuntetangga', [DataRukunTetanggaController::class, 'index']);
-Route::get('rukuntetangga/{id}', [DataRukunTetanggaController::class, 'show']);
-Route::post('rukuntetangga', [DataRukunTetanggaController::class, 'store']);
-Route::post('rukuntetangga/{id}', [DataRukunTetanggaController::class, 'update']);
-Route::delete('rukuntetangga/{id}', [DataRukunTetanggaController::class, 'destroy']);
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('rukuntetangga', [DataRukunTetanggaController::class, 'index']);
+    Route::get('rukuntetangga/{id}', [DataRukunTetanggaController::class, 'show']);
+    Route::post('rukuntetangga', [DataRukunTetanggaController::class, 'store']);
+    Route::post('rukuntetangga/{id}', [DataRukunTetanggaController::class, 'update']);
+    Route::delete('rukuntetangga/{id}', [DataRukunTetanggaController::class, 'destroy']);
 
-Route::get('masyarakat', [DataMasyarakatController::class, 'index']);
-Route::get('masyarakat/{id}', [DataMasyarakatController::class, 'show']);
-Route::post('masyarakat', [DataMasyarakatController::class, 'store']);
-Route::post('masyarakat/{id}', [DataMasyarakatController::class, 'update']);
-Route::delete('masyarakat/{id}', [DataMasyarakatController::class, 'destroy']);
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    Route::get('masyarakat', [DataMasyarakatController::class, 'index']);
+    Route::get('masyarakat/{id}', [DataMasyarakatController::class, 'show']);
+    Route::post('masyarakat', [DataMasyarakatController::class, 'store']);
+    Route::post('masyarakat/{id}', [DataMasyarakatController::class, 'update']);
+    Route::delete('masyarakat/{id}', [DataMasyarakatController::class, 'destroy']);
 });
 
 Route::get('/', function () {
