@@ -1,0 +1,690 @@
+{
+	"info": {
+		"_postman_id": "03d6aa72-a1ab-4527-bbf4-d4bdea02a20e",
+		"name": "Pendataan Warga Kurang Mampu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Rukun Tetangga",
+			"item": [
+				{
+					"name": "Tambah Rukun Tetangga",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "no_ktp_rukun_tetangga",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "no_rukun_tetangga",
+									"value": "40",
+									"type": "text"
+								},
+								{
+									"key": "nama_rukun_tetangga",
+									"value": "beben",
+									"type": "text"
+								},
+								{
+									"key": "notel_rukun_tetangga",
+									"value": "0878",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/rukuntetangga",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"rukuntetangga"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ubah Rukun Tetangga",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "no_ktp_rukun_tetangga",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "no_rukun_tetangga",
+									"value": "40",
+									"type": "text"
+								},
+								{
+									"key": "nama_rukun_tetangga",
+									"value": "beben",
+									"type": "text"
+								},
+								{
+									"key": "notel_rukun_tetangga",
+									"value": "0878",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/rukuntetangga/9",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"rukuntetangga",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lihat Rukun Tetangga",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/rukuntetangga",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"rukuntetangga"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus Rukun Tetangga",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/rukuntetangga/8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"rukuntetangga",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lihat Satu Rukun Tetangga",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/rukuntetangga/7",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"rukuntetangga",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Masyarakat",
+			"item": [
+				{
+					"name": "Lihat Masyarakat",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|Wk2Sq9zb9gcBYSddBx2y5j2oJE4DIVnNYpCJ5BYp",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/masyarakat",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"masyarakat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lihat Satu Masyarakat",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/masyarakat/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"masyarakat",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus Mahasiswa",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/masyarakat/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"masyarakat",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tambah Masyarat",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "no_kartu_keluarga",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "no_ktp_kepala_keluarga",
+									"value": "54321",
+									"type": "text"
+								},
+								{
+									"key": "nama_kepala_keluarga",
+									"value": "beben",
+									"type": "text"
+								},
+								{
+									"key": "pekerjaan_kepala_keluarga",
+									"value": "begal",
+									"type": "text"
+								},
+								{
+									"key": "penghasilan_kepala_keluarga",
+									"value": "5000000",
+									"type": "text"
+								},
+								{
+									"key": "jumlah_tanggungan",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "foto_kepala_keluarga",
+									"type": "file",
+									"src": "/home/aldiariq/Downloads/unknown.png"
+								},
+								{
+									"key": "notel_kepala_keluarga",
+									"value": "3434",
+									"type": "text"
+								},
+								{
+									"key": "status_tempat_tinggal",
+									"value": "MILIK_SENDIRI",
+									"type": "text"
+								},
+								{
+									"key": "id_rukun_tetangga",
+									"value": "9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/masyarakat",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"masyarakat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ubah Masyarat",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "no_kartu_keluarga",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "no_ktp_kepala_keluarga",
+									"value": "54321",
+									"type": "text"
+								},
+								{
+									"key": "nama_kepala_keluarga",
+									"value": "beben ed",
+									"type": "text"
+								},
+								{
+									"key": "pekerjaan_kepala_keluarga",
+									"value": "begal",
+									"type": "text"
+								},
+								{
+									"key": "penghasilan_kepala_keluarga",
+									"value": "5000000",
+									"type": "text"
+								},
+								{
+									"key": "jumlah_tanggungan",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "foto_kepala_keluarga",
+									"type": "file",
+									"src": "/home/aldiariq/Documents/Use Case Diagram.png"
+								},
+								{
+									"key": "notel_kepala_keluarga",
+									"value": "3434",
+									"type": "text"
+								},
+								{
+									"key": "status_tempat_tinggal",
+									"value": "MILIK_SENDIRI",
+									"type": "text"
+								},
+								{
+									"key": "id_rukun_tetangga",
+									"value": "9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/masyarakat/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"masyarakat",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autentikasi",
+			"item": [
+				{
+					"name": "Tambah Akun Admin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tambahakunadmin",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tambahakunadmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Keluar Akun Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|NtewjVijxqMP3YwwGQFcmJ6Xixo5mbb24Vyd8Z1v",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/keluar",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"keluar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Masuk Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "adminsistem@sistem.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/masuk",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"masuk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ganti Password Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|Cy5AUMpcfvkQK5bZhTp2ltVux2ov5sOe1G28ZBOP",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "passwordlama",
+									"value": "123456781",
+									"type": "text"
+								},
+								{
+									"key": "passwordbaru",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "ulangipasswordbaru",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/gantipassword",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"gantipassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endpoint Utama",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
