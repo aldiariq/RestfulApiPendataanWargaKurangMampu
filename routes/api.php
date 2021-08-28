@@ -31,3 +31,16 @@ Route::delete('masyarakat/{id}', [DataMasyarakatController::class, 'delete']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/', function () {
+    $keterangan = array(
+        'status' => true,
+        'pesan' => 'RestfulAPI Pendataan Warga Kurang Mampu'
+    );
+
+    return response()->json($keterangan);
+});
+
+Route::fallback(function () {
+    return redirect('/api');
+});
