@@ -145,7 +145,7 @@ class DataMasyarakatController extends Controller
         return response()->json($keterangan);
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
         $masyarakat = DataMasyarakat::find($id);
 

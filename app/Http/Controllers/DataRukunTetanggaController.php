@@ -105,7 +105,7 @@ class DataRukunTetanggaController extends Controller
         return response()->json($keterangan);
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
         $rukuntetangga = DataRukunTetangga::find($id);
 
