@@ -10,13 +10,16 @@ class DataMasyarakatController extends Controller
 {
     public function index()
     {
-        $masyarakat = DataMasyarakat::all();
+        $masyarakat = DataMasyarakat::join('data_rukun_tetanggas', 'data_masyarakats.id_rukun_tetangga', '=', 'data_rukun_tetanggas.id')
+        ->get(['data_masyarakats.*', 'data_rukun_tetanggas.no_rukun_tetangga']);
         return response()->json(['masyarakat' => $masyarakat]);
     }
 
     public function show($id)
     {
-        $masyarakat = DataMasyarakat::find($id);
+        $masyarakat = DataMasyarakat::join('data_rukun_tetanggas', 'data_masyarakats.id_rukun_tetangga', '=', 'data_rukun_tetanggas.id')
+        ->where('data_masyarakats.id', '=', $id)
+        ->get(['data_masyarakats.*', 'data_rukun_tetanggas.no_rukun_tetangga']);
         if ($masyarakat) {
             return response()->json(['masyarakat' => $masyarakat]);
         } else {
