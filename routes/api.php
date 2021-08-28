@@ -21,6 +21,7 @@ Route::post('masuk', [AuthController::class, 'masuk']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('keluar', [AuthController::class, 'keluar']);
+    Route::post('gantipassword', [AuthController::class, 'gantipassword']);
 
     Route::get('rukuntetangga', [DataRukunTetanggaController::class, 'index']);
     Route::get('rukuntetangga/{id}', [DataRukunTetanggaController::class, 'show']);

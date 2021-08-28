@@ -77,6 +77,51 @@ class AuthController extends Controller
         return response()->json($keterangan);
     }
 
+    public function gantipassword(Request $request)
+    {
+        $validasi = FacadesValidator::make($request->all(), [
+            'passwordlama' => 'required|string',
+            'passwordbaru' => 'required|string',
+            'ulangipasswordbaru' => 'required|string|same:passwordbaru'
+        ]);
+
+        if (!$validasi->fails()) {
+            $email = auth()->user()['email'];
+
+            $admin = User::where('email', $email)->first();
+
+            if (Hash::check($request->passwordlama, $admin->password)) {
+                $hashpasswordbaru = Hash::make($request->passwordbaru);
+
+                $admin->password = $hashpasswordbaru;
+
+                if ($admin->save()) {
+                    $keterangan = array(
+                        'status' => true,
+                        'pesan' => 'Berhasil Mengganti Password'
+                    );
+                } else {
+                    $keterangan = array(
+                        'status' => false,
+                        'pesan' => 'Gagal Mengganti Password'
+                    );
+                }
+            }else {
+                $keterangan = array(
+                    'status' => false,
+                    'pesan' => 'Pastikan Password Lama Benar'
+                );
+            }
+        } else {
+            $keterangan = array(
+                'status' => false,
+                'keterangan' => 'Pastikan Password Baru Sama'
+            );
+        }
+
+        return response()->json($keterangan);
+    }
+
     public function keluar()
     {
         if (auth()->user()->tokens()->delete()) {
